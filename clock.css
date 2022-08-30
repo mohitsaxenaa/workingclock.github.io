@@ -14,11 +14,28 @@ p {
     font-family: sans-serif;
 }
 
+:root{
+    --primary-color: #7fa9ff;
+    --secondary-color: #ff0000;
+    --one: rgb(255, 255, 255);
+    --b:rgb(10,47,0); 
+    --bg: linear-gradient(90deg, rgba(10,47,0,1) 0%, rgba(44,161,0,1) 50%, rgba(33,128,0,1) 100%);
+}
+.dark-theme{
+    --primary-color: #000000;
+    --secondary-color: #51ff00;
+    --one: rgb(0, 21, 116);
+    --b:rgb(2,0,47); 
+    --bg: linear-gradient(90deg, rgba(2,0,47,1) 0%, rgba(77,0,96,1) 52%, rgba(64,0,128,1) 100%);
+}
+
+
+
 .title{
    
         font-size: 40px;
         /* padding-bottom: 5em; */
-        color: white;
+        color: var(--secondary-color);
         text-decoration: underline;
         display:flex;
         justify-content: center;
@@ -28,13 +45,13 @@ p {
 body {
     /* background-color: #4d009a; */
     background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: var(--b);
+    background: var(--bg);
     background-repeat: no-repeat;
     background-size:cover;
 }
 .clock{
-    background-color: red;
+    background-color: var(--primary-color);
     border-radius: 5%;
     height : 50%;
     padding : 2em;
@@ -48,11 +65,12 @@ body {
     
 }
 .inside{
-    background-color: white;
+    /* background-color: white; */
+    /* border: 1px solid red; */
     border-radius:10px;
     display:flex;
-    padding:15px;
-    font-size: 30px;
+    /* padding:15px; */
+    font-size: 100px;
     flex-wrap: nowrap;
     justify-content: center;
     
@@ -63,29 +81,16 @@ body {
     font-size: 30px;
     padding: 2em;
     text-decoration: underline;
-    color: white;
+    color: var(--secondary-color);
 }
-.hours {
+.hours, .minutes, .seconds{
     padding: 10px;
-    background-color:black;
-    color: white;
-    margin:5px;
-    border: 2px solid white;
+    background-color:var(--one);
+    color: var(--secondary-color);
+    /* margin:5px; */
+    border: 0px solid rgb(0, 0, 0);
 }
-.minutes {
-    padding: 10px;
-    background-color:black;
-    color: white;
-    margin:5px;
-    border: 2px solid white;
-}
-.seconds {
-    padding: 10px;
-    background-color:black;
-    color: white;
-    margin:5px;
-    border: 2px solid white;
-}
+
 
 @media (max-width:640px){
     .container{
