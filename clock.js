@@ -33,9 +33,22 @@ secondsEl.textContent = "Seconds: " + sec
 setInterval(update, 1000);
 
 function update() {
-    dateEl.innerHTML = "Date: "+ new Date().getDate() + " / " + new Date().getMonth() + " / " + new Date().getFullYear();
-    secondsEl.innerHTML = "Seconds: "+ new Date().getSeconds() 
-    minutesEl.innerHTML = "Minutes: "+ new Date().getMinutes()
-    hoursEl.innerHTML = "Hours: "+ new Date().getHours()
+    dateEl.innerHTML = ""+ new Date().getDate() + " / " + new Date().getMonth() + " / " + new Date().getFullYear();
+    secondsEl.innerHTML = ": "+ new Date().getSeconds() 
+    minutesEl.innerHTML = ": "+ new Date().getMinutes()
+    hoursEl.innerHTML = " "+ new Date().getHours()
+}
+
+
+var icon = document.getElementById("icon");
+
+icon.onclick = function() {
+    document.body.classList.toggle("dark-theme")
+    if(document.body.classList.contains("dark-theme")){
+        icon.src = "img/sun.png";
+    }
+    else{
+        icon.src = "img/night-mode.png"
+    }
 }
 
